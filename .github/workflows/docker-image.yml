@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - test
 
 env:
   PROJECT_ID: ${{ secrets.SECRETS_GCP_PROJECT_ID }}
