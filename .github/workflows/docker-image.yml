@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  PROJECT_ID: ${{ secrets_GKE_PROJECT }}
+  PROJECT_ID: ${{ SECRETS_GCP_PROJECT_ID }}
   GKE_CLUSTER: autopilot-cluster-1    # cluster name
   GKE_ZONE: europe-central2   # cluster zone
   IMAGE: micro # image name
@@ -28,7 +28,7 @@ jobs:
     - id: 'auth'
       uses: 'google-github-actions/auth@v0'
       with:
-        credentials_json: '${{ secrets_GKE_SA_KEY }}'
+        credentials_json: '${{ SECRETS_GCP_SA_KEY }}'
 
     # Configure Docker to use the gcloud command-line tool as a credential
     # helper for authentication
